@@ -1,0 +1,6 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+<h1>Start here...</h1>
+{% endblock %}
