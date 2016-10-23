@@ -69,10 +69,8 @@ gulp.task('build', function (callback) {
 });
 
 // starts default watch and sync task
-/*gulp.task('default', function (callback) {
+gulp.task('default', function (callback) {
   runSequence(['nunjucks','sass','browserSync', 'watch'],
     callback
   )
-})*/
-
-gulp.task('default', ['nunjucks','sass','browserSync', 'watch']);
+});
