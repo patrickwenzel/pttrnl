@@ -1,5 +1,9 @@
-body, html {
-  font-family: -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+// Vendor
+@import "vendor/normalize";
+
+// Modules
+@import "modules/variables";
+
+// Partials
+@import "partials/base";
+@import "partials/banner";

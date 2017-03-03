@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var data = require('gulp-data');
 var nunjucksRender = require('gulp-nunjucks-render');
 var browserSync = require('browser-sync');
 var useref = require('gulp-useref');
@@ -8,19 +9,23 @@ var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
 var del = require('del');
 var runSequence = require('run-sequence');
+var htmlbeautify = require('gulp-html-beautify');
 
 // nunjucks
 gulp.task('nunjucks', function() {
   return gulp.src('dev/pages/**/*.+(html|njk|nunjucks)')
+    .pipe(data(function() {
+      return require('./dev/data.json')
+    }))
     .pipe(nunjucksRender({
       path: ['dev/templates']
     }))
-    .pipe(gulp.dest('dev'));
+    .pipe(gulp.dest('dev'))
 });
 
 // Sass task
 gulp.task('sass', function() {
-  return gulp.src('dev/scss/**/*.scss')
+  return gulp.src('dev/scss/**/*.+(scss|sass)')
     .pipe(sass())
     .pipe(gulp.dest('dev/css'))
     .pipe(browserSync.reload({
@@ -29,12 +34,12 @@ gulp.task('sass', function() {
 });
 
 // Watch task
-gulp.task('watch', ['browserSync', 'sass'], function() {
-  gulp.watch('dev/scss/**/*.scss', ['sass']);
-  gulp.watch('dev/*.html', browserSync.reload);
+gulp.task('watch', ['browserSync', 'sass', 'nunjucks'], function() {
+  gulp.watch('dev/scss/**/*.+(scss|sass)', ['sass']);
+  gulp.watch('dev/pages/*.+(html|njk|nunjucks)', ['nunjucks']);
+  gulp.watch('dev/templates/**/*.+(html|njk|nunjucks)', ['nunjucks']);
   gulp.watch('dev/js/**/*.js', browserSync.reload);
-  gulp.watch('dev/pages/**/*.+(html|njk|nunjucks)', browserSync.reload);
-  gulp.watch('dev/templates/**/*.+(html|njk|nunjucks)', browserSync.reload);
+  gulp.watch('dev/*.html', browserSync.reload);
 });
 
 // browserSync task
@@ -55,6 +60,15 @@ gulp.task('useref', function() {
     .pipe(gulp.dest('build'))
 });
 
+// clean up html
+gulp.task('htmlbeautify', function() {
+  gulp.src('dev/*.html')
+    .pipe(htmlbeautify({
+      indentSize: 2
+    }))
+    .pipe(gulp.dest('build'))
+});
+
 // clean up build
 gulp.task('clean:build', function() {
   return del.sync('build');
@@ -63,7 +77,7 @@ gulp.task('clean:build', function() {
 // deletes and re-build build folder
 gulp.task('build', function (callback) {
   runSequence('clean:build',
-    ['nunjucks','sass', 'useref'],
+    ['nunjucks','sass', 'useref', 'htmlbeautify'],
     callback
   )
 });
