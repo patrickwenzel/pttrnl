@@ -1,12 +1,26 @@
 {
-  "navItems" : [
+  "Components" : [
     {
-      "menu_title" : "Home",
-      "menu_item" : "index"
-    },
-    {
-      "menu_title" : "About",
-      "menu_item" : "about"
+      "title" : "Examples",
+      "id" : "examples",
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique mi odio, et volutpat enim suscipit et. Sed at venenatis leo. Nulla convallis tellus in leo gravida, in vehicula velit lobortis. Praesent consequat libero in mauris commodo pretium. Proin volutpat odio faucibus euismod porta. Aliquam erat volutpat. Nam sit amet metus ornare, congue nisl sed, rutrum neque. Mauris commodo purus et urna sagittis suscipit.",
+      "parts" : [
+        {
+          "type" : "examples",
+          "item" : "Headings",
+          "id" : "headings"
+        },
+        {
+          "type" : "examples",
+          "item" : "Paragraph",
+          "id" : "paragraph"
+        },
+        {
+          "type" : "examples",
+          "item" : "Unordered list",
+          "id" : "unordered-list"
+        }
+      ]
     }
   ]
 }

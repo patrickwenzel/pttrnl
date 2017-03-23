@@ -1,0 +1,12 @@
+{# Pattern list #}
+{% for coms in Components %}
+  <li><a href="#{{ coms.id }}">{{ coms.title }}</a>
+    {% if coms.parts %}
+    <ul>
+      {% for com in coms.parts %}
+      <li><a href="#{{ com.id }}">{{ com.item }}</a>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+{% endfor %}

@@ -2,42 +2,145 @@
 <html>
   <head>
      <meta charset="utf-8">
-     <title>Home</title>
-     <meta name="description" content="Home page">
+     <title>Pttrnl</title>
+     <meta name="description" content="Front-end pattern starter">
      <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
      <!--build:css css/main.min.css-->
      <link rel="stylesheet" href="css/main.css">
      <!--endbuild-->
   </head>
   <body>
-    <header class="" role="banner">
+    <header class="hdr">
+      <div class="menu-button">
+        <div class="menu-square">
+          <div class="burger">
+            <div class="bar"></div>
+          </div>
+        </div>
+        <div class="menu-text">Menu</div>
+      </div>
+    </header>
+    <main id="wrapper" class="wrp" role="main">
+      <div class="wrp__inner">
+        
+
+
+
+
+
+  <section id="pttr-examples" class="pattern pattern--heading">
+    <h2>Examples</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique mi odio, et volutpat enim suscipit et. Sed at venenatis leo. Nulla convallis tellus in leo gravida, in vehicula velit lobortis. Praesent consequat libero in mauris commodo pretium. Proin volutpat odio faucibus euismod porta. Aliquam erat volutpat. Nam sit amet metus ornare, congue nisl sed, rutrum neque. Mauris commodo purus et urna sagittis suscipit.<p>
+  </section>
+  
     
-      <div class="temp-banner">
-  <div class="temp-banner__inner">
-    <h1>frshnr</h1>
-    <p>Front-end starter for prototyping and static site development.</p>
+<section class="pattern">
+  <div id="pttr-headings" class="pattern-name">Headings</div>
+  <div class="pattern-preview">
+  <div class="code-preview">
+    <h1>h1. Lorem ipsum dolor sit amet</h1>
+    <h2>h2. Lorem ipsum dolor sit amet</h2>
+    <h3>h3. Lorem ipsum dolor sit amet</h3>
+    <h4>h4. Lorem ipsum dolor sit amet</h4>
+    <h5>h5. Lorem ipsum dolor sit amet</h5>
+    <h6>h6. Lorem ipsum dolor sit amet</h6>
+  </div>
+  <div class="code-btn"></div>
+  <div class="code-contain">
+    <pre class="language-markup"><code>&lt;h1&gt;h1. Lorem ipsum dolor sit amet&lt;/h1&gt;
+&lt;h2&gt;h2. Lorem ipsum dolor sit amet&lt;/h2&gt;
+&lt;h3&gt;h3. Lorem ipsum dolor sit amet&lt;/h3&gt;
+&lt;h4&gt;h4. Lorem ipsum dolor sit amet&lt;/h4&gt;
+&lt;h5&gt;h5. Lorem ipsum dolor sit amet&lt;/h5&gt;
+&lt;h6&gt;h6. Lorem ipsum dolor sit amet&lt;/h6&gt;</code></pre>
   </div>
 </div>
 
-    
-    </header>
-    
-      
-    
-    <main class="" role="main">
-    
+</section>
 
+  
+    
+<section class="pattern">
+  <div id="pttr-paragraph" class="pattern-name">Paragraph</div>
+  <div class="pattern-preview">
+  <div class="code-preview">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales nulla non libero commodo rhoncus vel eget est. Donec hendrerit et nibh nec aliquet. Nunc quis dictum ante, non dictum ligula. Mauris pretium vestibulum neque eleifend mollis. Aliquam gravida orci metus, non placerat risus malesuada vel. Vestibulum lorem velit, placerat condimentum condimentum nec, tincidunt sit amet est. Sed fringilla turpis risus, eu fermentum dolor eleifend vitae. Aenean sodales pulvinar sagittis.</p>
+  </div>
+  <div class="code-btn"></div>
+  <div class="code-contain">
+    <pre class="language-markup"><code>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales nulla non libero commodo rhoncus vel eget est. Donec hendrerit et nibh nec aliquet. Nunc quis dictum ante, non dictum ligula. Mauris pretium vestibulum neque eleifend mollis. Aliquam gravida orci metus, non placerat risus malesuada vel. Vestibulum lorem velit, placerat condimentum condimentum nec, tincidunt sit amet est. Sed fringilla turpis risus, eu fermentum dolor eleifend vitae. Aenean sodales pulvinar sagittis.&lt;/p&gt;</code></pre>
+  </div>
+</div>
+
+</section>
+
+  
+    
+<section class="pattern">
+  <div id="pttr-unordered-list" class="pattern-name">Unordered list</div>
+  <div class="pattern-preview">
+  <div class="code-preview">
+    <ul>
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>Quisque ac enim sit amet dolor ultricies porttitor</li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+      <li>Cras tincidunt sem eu ipsum volutpat, vel rutrum justo gravida</li>
+      <li>Proin interdum elit sit amet mauris ultrices consequat. Integer viverra odio et eros dapibus sollicitudin eget vel urna</li>
+      <li>Phasellus sodales orci non magna dignissim, a tempor nibh convallis</li>
+    </ul>
+  </div>
+  <div class="code-btn"></div>
+  <div class="code-contain">
+    <pre class="language-markup"><code>&lt;ul&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+  &lt;li&gt;Quisque ac enim sit amet dolor ultricies porttitor&lt;/li&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;Cras tincidunt sem eu ipsum volutpat, vel rutrum justo gravida&lt;/li&gt;
+  &lt;li&gt;Proin interdum elit sit amet mauris ultrices consequat. Integer viverra odio et eros dapibus sollicitudin eget vel urna&lt;/li&gt;
+  &lt;li&gt;Phasellus sodales orci non magna dignissim, a tempor nibh convallis&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+</div>
+
+</section>
+
+  
+
+
+
+      </div>
     </main>
-    <footer class="">
-    </footer>
+    <div class="off-cnvs">
+      <nav id="menu" class="side-nav" role="navigation">
+        <ul>
+          
+          
+
+  <li><a href="#examples">Examples</a>
+    
+    <ul>
+      
+      <li><a href="#headings">Headings</a>
+      
+      <li><a href="#paragraph">Paragraph</a>
+      
+      <li><a href="#unordered-list">Unordered list</a>
+      
+    </ul>
+    
+  </li>
+
+
+          
+        </ul>
+      </nav>
+    </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script
-			  src="https://code.jquery.com/jquery-3.1.1.min.js"
-			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-			  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
     <!--build:js js/main.min.js -->
     <script type="text/javascript" src="js/main.js"></script>
-    <!-- place js files here -->
     <!-- endbuild -->
   </body>
 </html>

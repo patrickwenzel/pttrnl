@@ -7,6 +7,7 @@ var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
+var autoprefixer = require('gulp-autoprefixer');
 var del = require('del');
 var runSequence = require('run-sequence');
 var htmlbeautify = require('gulp-html-beautify');
@@ -27,6 +28,10 @@ gulp.task('nunjucks', function() {
 gulp.task('sass', function() {
   return gulp.src('dev/scss/**/*.+(scss|sass)')
     .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('dev/css'))
     .pipe(browserSync.reload({
       stream: true
@@ -76,15 +81,14 @@ gulp.task('clean:build', function() {
 
 // deletes and re-build build folder
 gulp.task('build', function (callback) {
-  runSequence('clean:build',
-    ['nunjucks','sass', 'useref', 'htmlbeautify'],
+  runSequence(['clean:build','useref'],
     callback
   )
 });
 
 // starts default watch and sync task
 gulp.task('default', function (callback) {
-  runSequence(['nunjucks','sass','browserSync', 'watch'],
+  runSequence(['nunjucks','sass','browserSync','watch'],
     callback
   )
 });

@@ -1,0 +1,6 @@
+{% macro pattern(id, name, type, part) %}
+<section class="pattern">
+  <div id="pttr-{{ id }}" class="pattern-name">{{ name }}</div>
+  {% include "components/" + type + "/" + part + ".html" ignore missing %}
+</section>
+{% endmacro %}

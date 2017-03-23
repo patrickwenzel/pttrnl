@@ -1,0 +1,21 @@
+<!-- index.html -->
+{% set title = 'Pttrnl' %}
+{% set description = 'Front-end pattern starter' %}
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% import "macros/pattern-macro.html" as list %}
+
+{# Loop through all components #}
+{% for coms in Components %}
+  <section id="pttr-{{ coms.id }}" class="pattern pattern--heading">
+    <h2>{{ coms.title }}</h2>
+    <p>{{ coms.desc }}<p>
+  </section>
+  {% for com in coms.parts %}
+    {{ list.pattern(com.id, com.item, com.type, com.id) }}
+  {% endfor %}
+{% endfor %}
+
+{% endblock %}
