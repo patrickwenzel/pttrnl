@@ -33,9 +33,7 @@ gulp.task('sass', function() {
       cascade: false
     }))
     .pipe(gulp.dest('dev/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+    .pipe(browserSync.stream())
 });
 
 // Watch task

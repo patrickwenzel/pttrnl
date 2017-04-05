@@ -14,7 +14,7 @@
     <p>{{ coms.desc }}<p>
   </section>
   {% for com in coms.parts %}
-    {{ list.pattern(com.id, com.item, com.type, com.id) }}
+    {{ list.pattern(com.id, com.item, coms.id, com.id) }}
   {% endfor %}
 {% endfor %}
 

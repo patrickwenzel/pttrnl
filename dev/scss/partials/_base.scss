@@ -19,7 +19,7 @@ body, html {
 }
 
 .hdr {
-  background: #eaeaea;
+  background: $mid_gray;
   top: 0;
   position: fixed;
   z-index: 3;
@@ -35,9 +35,8 @@ body, html {
   z-index: 45;
   height: 60px;
   .menu-square {
-    background: #e1e1e1;
-    border-bottom: 1px solid #fff;
-    border-left: 1px solid #fff;
+    background: $mid_gray;
+    border-right: 1px solid $light_gray;
     float: left;
     display: table;
     position: relative;
@@ -57,7 +56,7 @@ body, html {
         &:before,
         &:after {
           content: '';
-          background: #000;
+          background: $darkest_gray;
           position: absolute;
           width: 18px;
           height: 3px;
@@ -76,14 +75,15 @@ body, html {
     }
   }
   .menu-text {
+    color: $darkest_gray;
     display: block;
     float: left;
+    font-size: 1.125rem;
+    font-weight: 700;
     line-height: 60px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-left: 1em;
-    font-size: 1.125rem;
-    font-weight: 600;
   }
   &.active {
     .burger {
@@ -106,8 +106,7 @@ body, html {
 }
 
 .wrp {
-  background-color: #fff;
-  border-left: 1px solid #eaeaea;
+  background-color: $white;
   top: 0;
   left: 0;
   position: absolute;
@@ -115,14 +114,11 @@ body, html {
   width: 100%;
   min-height: 100%;
   transition: all 0.2s ease;
-  /*box-shadow: 0 0 0 2px rgba(0,0,0,0.15);*/
   &.wrp--ovr {
+    border-left: 1px solid $mid_gray;
     left: 315px;
   }
   .wrp__inner {
-    /*padding: 6em 2% 0;
-    overflow-y: auto;
-    height: auto;*/
     margin: 6em auto 0;
     padding: 0 0.75em;
     overflow-y: auto;
@@ -132,12 +128,12 @@ body, html {
 }
 
 .pattern {
-  border: 1px solid #e1e1e1;
+  border: 1px solid $mid_gray;
   border-radius: 3px;
   margin-bottom: 4em;
   .pattern-name {
-    background: #e1e1e1;
-    letter-spacing: 0.035em;
+    background: $light_gray;
+    border-bottom: 1px solid $mid_gray;
     padding: 1em;
     text-transform: uppercase;
     &:first-letter {
@@ -145,25 +141,74 @@ body, html {
     }
   }
   .pattern-preview {
-    padding: 1em 1.25em;
+    padding: 1.125em 1.25em 1em;
   }
   &.pattern--heading {
     border: none;
     h2 {
       margin: 0 0 .5em;
       padding: 0 0 .25em;
-      border-bottom: 1px solid #e1e1e1;
-    }
-    p {
-      line-height: 1.5;
-      margin-bottom: 3em;
+      border-bottom: 1px solid $mid_gray;
     }
   }
 }
 
+.palette {
+  overflow: auto;
+  padding: 1em 0 0;
+  width: 100%;
+  height: auto;
+  .color {
+    float: left;
+    position: relative;
+    width: 25%;
+    .color-box {
+      margin: 0 auto 0.5em;
+      width: 90%;
+      height: 100px;
+    }
+    .color-txt {
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      margin: 0 auto 2em;
+      width: 90%;
+      .color-txt__hex {
+        font-size: 0.875rem;
+        margin: 0 0 0.125em;
+      }
+      .color-txt__class {
+        font-size: 0.75rem;
+        line-height: 1.6;
+      }
+    }
+  }
+  & + .palette {
+    padding: 0;
+  }
+}
+
+.bg-darkest-gray {
+  background: $darkest_gray;
+}
+
+.bg-dark-gray {
+  background: $dark_gray;
+}
+
+.bg-mid-gray {
+  background: $mid_gray;
+}
+
+.bg-gray {
+  background: $gray;
+}
+
+.bg-light-gray {
+  background: $light_gray;
+}
+
 pre[class*="language-"] {
   background: #f8f8f8;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   line-height: inherit;
   overflow: hidden !important;
   padding: 2em !important;
@@ -184,23 +229,24 @@ pre[class*="language-"] {
 }
 
 .code-btn {
-  background: #eaeaea;
+  background: $mid_gray;
   border-radius: 3px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  display: inline-block;
+  color: $darkest_gray;
   cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
   margin: 0.5em 0 1em;
   padding: 0.625em;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   &:before {
-    content: '<code>'
+    content: '</> Code'
   }
   &.show {
     &:before {
-      content: '</close>'
+      content: '</> Hide'
     }
   }
   &.show + .code-contain {
@@ -227,26 +273,31 @@ pre[class*="language-"] {
     margin: 0;
     padding: 0;
     li {
-      border-bottom: 1px solid #eaeaea;
+      border-bottom: 1px solid $mid_gray;
       display: block;
-      font-weight: 600;
       position: relative;
       a {
+        font-size: 1.125rem;
+        font-weight: 700;
         display: block;
-        color: #404041;
+        color: #222;
         cursor: pointer;
-        line-height: 3.75;
+        line-height: 60px;
         text-decoration: none;
         padding-left: 1em;
+        transition: border-left 0.15s ease;
+        &.current {
+          border-left: 4px solid $dark_gray;
+        }
       }
       &.children {
         &:after {
           content: '+';
-          border-left: 1px solid #eaeaea;
+          border-left: 1px solid $mid_gray;
           cursor: pointer;
           display: block;
           font-size: 1.25rem;
-          font-weight: 600;
+          font-weight: 700;
           line-height: 60px;
           position: absolute;
           text-align: center;
@@ -257,13 +308,13 @@ pre[class*="language-"] {
         }
         &.active {
           &:after {
-            background: #f8f8f8;
+            background: $light_gray;
             content: '-';
           }
         }
       }
       ul {
-        background: #f8f8f8;
+        background: $light_gray;
         border: none;
         list-style: none;
         overflow-y: hidden;
@@ -272,13 +323,18 @@ pre[class*="language-"] {
         padding: 0;
         transition: max-height 0.3s ease;
         &.open {
-          border-top: 1px solid #eaeaea;
-          max-height: 300px;
+          border-top: 1px solid $mid_gray;
+          max-height: 500px;
         }
         li {
+          border-bottom: 1px solid $mid_gray;
           font-weight: 400;
           &:last-child {
             border-bottom: none;
+          }
+          a {
+            font-size: 1rem;
+            font-weight: 400;
           }
         }
       }

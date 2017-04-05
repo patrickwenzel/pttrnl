@@ -1,4 +1,17 @@
+// Font import
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
+
 // Default font styles
-$default_font: -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$default_font: "Roboto", -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $default_fontsize: 100%;
-$default_fontcolor: #222;
+$default_fontcolor: #404041;
+
+// Palette
+$black: #000000;
+$white: #FFFFFF;
+
+$darkest_gray: #424242;
+$dark_gray: #757575;
+$mid_gray: #E0E0E0;
+$gray: #EEEEEE;
+$light_gray: #F5F5F5;
