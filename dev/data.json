@@ -3,7 +3,6 @@
     {
       "title" : "Examples",
       "id" : "examples",
-      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique mi odio, et volutpat enim suscipit et. Sed at venenatis leo. Nulla convallis tellus in leo gravida, in vehicula velit lobortis. Praesent consequat libero in mauris commodo pretium. Proin volutpat odio faucibus euismod porta. Aliquam erat volutpat. Nam sit amet metus ornare, congue nisl sed, rutrum neque. Mauris commodo purus et urna sagittis suscipit.",
       "parts" : [
         {
           "item" : "Headings",
