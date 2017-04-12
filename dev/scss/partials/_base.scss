@@ -168,7 +168,7 @@ body, html {
       height: 100px;
     }
     .color-txt {
-      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      font-family: $default_code;
       margin: 0 auto 2em;
       width: 90%;
       .color-txt__hex {
@@ -204,6 +204,14 @@ body, html {
 
 .bg-light-gray {
   background: $light_gray;
+}
+
+.pattern--heading code {
+  background: $light_gray;
+  border-radius: 3px;
+  font-family: $default_code;
+  font-size: 0.75rem;
+  padding: 0.5em;
 }
 
 pre[class*="language-"] {
