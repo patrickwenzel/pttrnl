@@ -643,7 +643,8 @@ pre[class*="language-"] {
         line-height: 60px;
         text-decoration: none;
         padding-left: 1em;
-        transition: border-left 0.15s ease; }
+        transition: border-left 0.15s ease;
+        z-index: 4; }
         .side-nav ul li a.current {
           border-left: 4px solid #757575; }
       .side-nav ul li.children:after {
@@ -659,7 +660,8 @@ pre[class*="language-"] {
         top: 0;
         right: 0;
         width: 60px;
-        height: 60px; }
+        height: 60px;
+        z-index: 5; }
       .side-nav ul li.children.active:after {
         background: #F5F5F5;
         content: '-'; }

@@ -294,6 +294,7 @@ pre[class*="language-"] {
         text-decoration: none;
         padding-left: 1em;
         transition: border-left 0.15s ease;
+        z-index: 4;
         &.current {
           border-left: 4px solid $dark_gray;
         }
@@ -313,6 +314,7 @@ pre[class*="language-"] {
           right: 0;
           width: 60px;
           height: 60px;
+          z-index: 5;
         }
         &.active {
           &:after {
