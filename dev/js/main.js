@@ -70,13 +70,12 @@ Scroll = {
     // onload scroll to
     if(loc) {
       window.onload = function(e) {
-        if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-          /* fix for firefox issue */
-          goscroll(document.documentElement, pos, 200);
-        } else {
-          /* for everything else */
+        if(navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
+          /* fix for safari issue */
           goscroll(document.body, pos, 200);
         }
+        /* good for everything else */
+        goscroll(document.documentElement, pos, 200);
         e.stopPropagation();
       }
     }
@@ -103,11 +102,12 @@ Scroll = {
         var clean = link.replace("#", "");
         var goTo = document.getElementById("pttr-" + clean);
         var pos = goTo.offsetTop;
-        if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-          goscroll(document.documentElement, pos, 200);
-        } else {
+        if(navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
+          /* fix for safari issue */
           goscroll(document.body, pos, 200);
         }
+        /* good for everything else */
+        goscroll(document.documentElement, pos, 200);
       }
     }
 
