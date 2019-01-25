@@ -1,8 +1,7 @@
 pttrnl
 ======
 
-A front-end starter kit creating pattern libraries.
-https://pttrnl.patrickwenzel.com <https://pttrnl.patrickwenzel.com>
+A front-end starter kit creating pattern libraries: https://pttrnl.patrickwenzel.com
 
 Dependencies
 ------------
