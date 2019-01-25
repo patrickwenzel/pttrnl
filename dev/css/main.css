@@ -476,7 +476,7 @@ body, html {
     letter-spacing: 0.05em;
     margin-left: 1em; }
   .menu-button.active .burger .bar {
-    background: transparent; }
+    background: rgba(0, 0, 0, 0); }
     .menu-button.active .burger .bar:before {
       display: block;
       margin: 0;
